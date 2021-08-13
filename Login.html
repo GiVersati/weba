@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div data-role="page" id="pagina-login">
+
+        <div data-role="header">
+            <h1>Index</h1>
+            <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                <a data-icon="bars" data-iconpos="notext" data-role="button" href="#gaveta1">Menu</a>
+            
+            </div>
+    <main class="container">
+        <h2>Login</h2>
+        <form id="formValidate" method="post" action="">
+            <div class="input-field">
+                <input type="text" name="username" id="username" placeholder="Enter Your Username" required minlength="3">
+                <div class="underline"></div>
+                <script>
+                    if (username < 3) {
+                        console.log("Preencha os campos corretamente")
+                    } else {
+                        console.log("Está preenchido de forma correta")
+                    }
+                </script>
+            </div>
+            <div class="input-field">
+                <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
+                <div class="underline"></div>
+                <script>
+                    if (password === true) {
+                        FormValidate(password);
+                        console.log("Preencha os campos corretamente")
+                    } else {
+                        console.log("Está preenchido de forma correta")
+                    }
+                </script>
+              
+            </div>
+
+            <input type="submit" value="Enviar">
+            <br>
+            <button onclick="window.location.href='index.html'">Retorne para o Index</button>
+       
+
+        </form>
+
+
+
+
+        </div>
+        </div>
+        </div>
+    </main>
+</body>
+
+</html>

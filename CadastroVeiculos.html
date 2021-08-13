@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <script src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
+    <title>Login Form</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <main class="container">
+        <h2>Cadastro</h2>
+        <form id="formValidate" method="post" action="">
+            <div class="input-field">
+                <input type="text" name="carro" id="carro" placeholder="Nome do Veículo" required minlength="2">
+                <div class="underline"></div>
+            </div>
+            <div class="input-field">
+                <input type="text" name="placa" id="placa" onkeyup="validarPlaca(this)" placeholder="Insira a placa do carro" maxlength="8" autofocus required>
+                <div class="underline"></div>
+            </div>
+            <br>
+            <div class="input-field">
+                <input type="text" name="distancia" id="distancia" placeholder="Distancia percorrida">
+                <div class="underline"></div>
+            </div>
+            <br>
+            <div class="input-field">
+                <input type="text" name="gasolina" id="gasolina" placeholder="Insira a quantidade de gasolina" autofocus required>
+                <div class="underline"></div>
+            </div>
+            <br>
+            <input type="submit" onclick="executar(event);" name="submit" value="Cadastrar">
+            
+
+            <script>
+                function executar() {
+                    event.preventDefault();
+                    var distancia = parseFloat(document.getElementById('distancia').value);
+                    var gasolina = parseFloat(document.getElementById('gasolina').value);
+                    var resultado = (distancia / gasolina);
+
+                    console.log(resultado)
+                   
+
+
+                }
+               
+            </script>
+
+            <script>
+                function validarPlaca(entradaDoUsuario) {
+                    var placa = entradaDoUsuario.value;
+
+                    if (placa.length === 1 || placa.length === 2) {
+                        placaMaiuscula = placa.toUpperCase();
+                        document.forms[0].placa.value = placaMaiuscula;
+                        return true;
+                    }
+
+                    if (placa.length === 3) {
+                        placa += "-";
+                        placaMaiuscula = placa.toUpperCase();
+                        document.forms[0].placa.value = placaMaiuscula;
+                        return true;
+
+
+                    }
+
+
+                }
+            </script>
+            </div>
+
+            <button onclick="window.location.href='index.html'">Retorne para o Index</button>
+
+
+            </div>
+            </div>
+            </div>
+    </main>
+</body>
+
+</html>

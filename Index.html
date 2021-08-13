@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.css">
+    <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.js"></script>
+    <link rel="stylesheet" href="Style.css">
+    <script src="jquery-mobile.js"></script>
+    <title>jQuery Mobile</title>
+
+</head>
+
+<body>
+    <div data-role="page" id="pagina-index">
+
+        <div data-role="header">
+            <h1>Index</h1>
+            <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                <a data-icon="bars" data-iconpos="notext" data-role="button" href="#gaveta1">Menu</a>
+
+            </div>
+        </div>
+        <!-- /header -->
+
+        <div data-role="panel" id="gaveta1" data-display="overlay">
+            <!-- imagem -->
+            <img src="logo_syspan_sistemas_pb.png" width="240">
+            <ul data-role="listview">
+                <li><a href="#pagina-3">Página 3</a></li>
+                <li><a href="#pagina-2">Página 2</a></li>
+            </ul>
+        </div>
+        <!-- /gaveta navegação -->
+
+        <div role="main" class="ui-content">
+            <!--<p> Conteúdo página 1 </p> -->
+            <br>
+            <div mbsc-form>
+                <div class="mbsc-align-center">
+                    <div class="mbsc-note mbsc-note-primary">
+                    </div>
+                </div>
+
+                <div mbsc-form>
+                    <div class="mbsc-form-group">
+                        <div class="mbsc-form-group-title">
+                            <h1>Modelos de Transporte:</h1>
+                        </div>
+                        <br>
+                        <ul id="multiline" class="mbsc-cloak">
+                            <li>
+                                <h3>Automobiles:</h3>
+                                <p>Os carros entraram em uso global durante o século XX e as economias desenvolvidas
+                                    dependem deles. O ano de 1886 é considerado como o ano de nascimento do carro
+                                    moderno, quando o inventor alemão Karl Benz patenteou seu Benz Patent-Motorwagen. Os
+                                    carros tornaram-se amplamente disponíveis no início do século XX. </p>
+                            </li>
+                            <br>
+                            <br>
+                            <li>
+                                <h3>AirPlane:</h3>
+                                <p>O surgimento da aviação é uma das grandes evoluções tecnológicas da humanidade. A
+                                    criação do avião foi um grande marco para a história, pois ele diminuiu de forma
+                                    significativa o tempo de viagem entre duas cidades. </p>
+                            </li>
+                            <br>
+                            <br>
+                            <li>
+                                <h3>Train:</h3>
+                                <p>Em 1814, o inglês George Stephenson apresentou a primeira locomotiva, com oito vagões
+                                    com 30 toneladas, dando início à era das ferrovias. Foi aí que os trens começaram a
+                                    conquistar o mundo. No Brasil, a primeira ferrovia foi inaugurada em 1854, por Dom
+                                    Pedro Segundo. A modernização continuou</p>
+                            </li>
+                            <br>
+                            <br>
+                            <li>
+                                <h3>Ship:</h3>
+                                <p>Em 1807, Robert Fulton, dos Estados Unidos, conseguira uma façanha. Seu barco de
+                                    rodas Clermont foi equipado com um motor a vapor inventado por James Watt. A nova
+                                    engenhoca mostrou-se rentável e passou a ser empregada na navegação fluvial e
+                                    costeira.</p>
+                            </li>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <img src="logo_syspan_sistemas_pb.png">
+
+                        </ul>
+                    </div>
+                </div>
+                </ul>
+            </div>
+        </div>
+
+        <script>
+            mobiscroll.settings = {
+                lang: 'pt-BR',
+                theme: 'ios',
+                themeVariant: 'light'
+            };
+
+            $(function () {
+
+                $('#multiline').mobiscroll().listview({
+                    enhance: true,
+                    swipe: false
+                });
+
+                $('#custom').mobiscroll().listview({
+                    enhance: true,
+                    swipe: false
+                });
+
+                $('#cards').mobiscroll().listview({
+                    swipe: false
+                });
+
+            });
+        </script>
+        <script>
+            mobiscroll.settings = {
+                lang: 'pt-BR',
+                theme: 'ios',
+                themeVariant: 'light'
+            };
+
+            $(function () {
+
+                $('#simple').mobiscroll().listview();
+
+                $('#striped').mobiscroll().listview({
+                    striped: true
+                });
+            });
+        </script>
+    </div>
+    </div>
+    </div>
+    <!-- /content -->
+
+    </div>
+    <!--/pagina-1 -->
+
+    <div data-role="page" id="pagina-2">
+        <div data-role="header">
+            <h1>Segunda página</h1>
+            <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                <a data-icon="bars" data-iconpos="notext" data-role="button" href="#gaveta2">Menu</a>
+            </div>
+            <main class="container">
+                <h2>Login</h2>
+                <form id="formValidate" method="post" action="">
+                    <div class="input-field">
+                        <input type="text" name="username" id="username" placeholder="Enter Your Username" required
+                            minlength="3">
+                        <div class="underline"></div>
+                        <script>
+                            if (username < 3) {
+                                console.log("Preencha os campos corretamente")
+                            } else {
+                                console.log("Está preenchido de forma correta")
+                            }
+                        </script>
+                    </div>
+                    <div class="input-field">
+                        <input type="password" name="password" id="password" placeholder="Enter Your Password" required>
+                        <div class="underline"></div>
+                        <script>
+                            if (password === true) {
+                                FormValidate(password);
+                                console.log("Preencha os campos corretamente")
+                            } else {
+                                console.log("Está preenchido de forma correta")
+                            }
+                        </script>
+
+                    </div>
+
+                    <input type="submit" value="Enviar">
+                    <br>
+                    <button onclick="window.location.href='index.html'">Retorne para o Index</button>
+
+
+                </form>
+        </div>
+
+        <div data-role="panel" id="gaveta1" data-display="reveal">
+            <!-- Fake logo from: https://github.com/pigment/fake-logos -->
+            <img src="logo_syspan_sistemas_pb.png" width="240">
+            <ul data-role="listview">
+                <li><a href="#pagina-3">Página 3</a></li>
+                <li><a href="#pagina-2">Página 2</a></li>
+            </ul>
+        </div>
+        <div data-role="page" id="pagina-3">
+            <div data-role="header">
+                <h1>Next Page</h1>
+                <div data-role="controlgroup" data-type="horizontal" class="ui-btn-left">
+                    <a data-icon="bars" data-iconpos="notext" data-role="button" href="#gaveta3">Menu</a>
+                </div>
+                <main class="container">
+                    <h2>Cadastro</h2>
+                    <form id="formValidate" method="post" action="">
+                        <div class="input-field">
+                            <input type="text" name="carro" id="carro" placeholder="Nome do Veículo" required minlength="2">
+                            <div class="underline"></div>
+                        </div>
+                        <div class="input-field">
+                            <input type="text" name="placa" id="placa" onkeyup="validarPlaca(this)" placeholder="Insira a placa do carro" maxlength="8" autofocus required>
+                            <div class="underline"></div>
+                        </div>
+                        <br>
+                        <div class="input-field">
+                            <input type="text" name="distancia" id="distancia" placeholder="Distancia percorrida">
+                            <div class="underline"></div>
+                        </div>
+                        <br>
+                        <div class="input-field">
+                            <input type="text" name="gasolina" id="gasolina" placeholder="Insira a quantidade de gasolina" autofocus required>
+                            <div class="underline"></div>
+                        </div>
+                        <br>
+                        <input type="submit" onclick="executar(event);" name="submit" value="Cadastrar">
+                        
+            
+                        <script>
+                            function executar() {
+                                event.preventDefault();
+                                var distancia = parseFloat(document.getElementById('distancia').value);
+                                var gasolina = parseFloat(document.getElementById('gasolina').value);
+                                var resultado = (distancia / gasolina);
+            
+                                console.log(resultado)
+                    
+            
+            
+                            }
+                           
+                        </script>
+                        <!--Valor do litro de combustível / quilômetros rodados = valor do reembolso por quilômetro.-->
+                        <script>
+                            function validarPlaca(entradaDoUsuario) {
+                                var placa = entradaDoUsuario.value;
+            
+                                if (placa.length === 1 || placa.length === 2) {
+                                    placaMaiuscula = placa.toUpperCase();
+                                    document.forms[0].placa.value = placaMaiuscula;
+                                    return true;
+                                }
+            
+                                if (placa.length === 3) {
+                                    placa += "-";
+                                    placaMaiuscula = placa.toUpperCase();
+                                    document.forms[0].placa.value = placaMaiuscula;
+                                    return true;
+            
+            
+                                }
+            
+            
+                            }
+                        </script>
+                        </div>
+            
+                        <button onclick="window.location.href='index.html'">Retorne para o Index</button>
+            
+</div>            
+
+        <div data-role="footer" data-position="fixed">
+            <h1><Footer></Footer></h1>
+        </div>
+    </div>
+    <!-- /pagina-2 -->
+</body>
+
+</html>
